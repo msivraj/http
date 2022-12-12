@@ -46,6 +46,8 @@ class IOClient extends BaseClient {
   /// Sends an HTTP request and asynchronously returns the response.
   @override
   Future<IOStreamedResponse> send(BaseRequest request) async {
+    print("calling http send function");
+
     if (_inner == null) {
       throw ClientException(
           'HTTP request failed. Client is already closed.', request.url);
